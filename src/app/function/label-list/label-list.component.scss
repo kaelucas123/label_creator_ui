@@ -1,9 +1,7 @@
 .custom-table {
-  max-height: 400px; /* Ajuste a altura máxima conforme necessário */
-  width: 88vw;
+  max-height: 700px; /* Ajuste a altura máxima conforme necessário */
+  width: 100%;
   overflow-y: auto;
-  position: relative;
-  margin-left: 2.5rem;
   text-align: center;
 
   .mat-header-row {
@@ -13,7 +11,9 @@
     z-index: 1; /* Garante que o cabeçalho fique acima do conteúdo rolável */
   }
 }
-
+.table_container{
+  width: 100%;
+}
 ::-webkit-scrollbar {
   width: 10px;
 }
