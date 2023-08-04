@@ -9,12 +9,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LabelListComponent } from './function/label-list/label-list.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatTableModule} from "@angular/material/table";
+import {MatButtonModule} from "@angular/material/button";
+import {HttpClientModule} from "@angular/common/http";
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import { CreateComponent } from './function/create/create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
-    LabelListComponent
+    LabelListComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +30,12 @@ import {MatTableModule} from "@angular/material/table";
     BrowserAnimationsModule,
     MatIconModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule,
+    HttpClientModule,
+    MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

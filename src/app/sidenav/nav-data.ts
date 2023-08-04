@@ -1,24 +1,24 @@
 export const navbarData = [
   {
-    routeLink: '',
+    function: 'LIST',
     icon: 'assets/images/table.png',
     label: 'Listar'
   },
 
   {
-    routeLink: '',
+    function: 'CREATE',
     icon: 'assets/images/create.png',
     label: 'Criar'
   },
 
   {
-    routeLink: '',
+    function: 'EXCHANGE',
     icon: 'assets/images/exchange.png',
     label: 'Substituir'
   },
 
   {
-    routeLink: '',
+    function: 'MYSQL',
     icon: 'assets/images/mysql.png',
     label: 'Gerar Mysql'
   }

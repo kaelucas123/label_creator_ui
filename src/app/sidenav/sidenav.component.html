@@ -9,7 +9,7 @@
   <div class="col">
     <div class="row mt-2 sidenav-nav d-flex align-items-center justify-content-start">
       <div class="sidenav-nav-item mt-4" *ngFor="let data of navData">
-        <div class="sidenav-nav-link" [routerLink]=[data.routeLink]>
+        <div class="sidenav-nav-link" (click)="selectFunction(data.function)">
           <img class="sidenav-link-icon position-absolute" [src]="data.icon" alt="Icon">
           <p class="sidenav-link-text position-absolute" *ngIf="collapsed">{{data.label}}</p>
         </div>

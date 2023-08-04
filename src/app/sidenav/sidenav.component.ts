@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {navbarData} from "./nav-data";
+import {AppComponent} from "../app.component";
 
 interface SideNavToggle{
   screenWidth: number;
@@ -11,6 +12,10 @@ interface SideNavToggle{
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent {
+
+  constructor(private app:AppComponent) {
+  }
+
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed = false;
   navData = navbarData;
@@ -29,4 +34,9 @@ export class SidenavComponent {
       collapsed: this.collapsed
     });
   }
+
+  selectFunction(functionName: string){
+    this.app.function = functionName;
+  }
+
 }
