@@ -1,23 +1,21 @@
 <app-sidenav></app-sidenav>
 <div class="container-fluid h-100 ml-3">
   <div class="container h-100 bg-danger">
-    <div class="row bg-dark">
+    <div class="row">
       <div class="col">
           title
       </div>
       <div class="col">
-        <mat-form-field>
-          <mat-label>Select the Project</mat-label>
-          <mat-select [(ngModel)]="selectedProjectId" (ngModelChange)="onProjectChange()">
-            <mat-option *ngFor="let project of projects" [value]="project.id">
+          <select [(ngModel)]="selectedProjectId" (ngModelChange)="onProjectChange()">
+            <option *ngFor="let project of projects" [value]="project.id">
               {{ project.name }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+            </option>
+          </select>
       </div>
     </div>
     <div class="row">
       <app-label-list [projectId]="selectedProjectId" *ngIf="function == 'LIST'"></app-label-list>
+      <app-create *ngIf="function == 'CREATE'"></app-create>
     </div>
   </div>
 </div>
