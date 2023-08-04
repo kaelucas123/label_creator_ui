@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {Project} from "./model/project";
 import {ProjectService} from "./service/project.service";
+import {LabelListComponent} from "./function/label-list/label-list.component";
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,8 @@ import {ProjectService} from "./service/project.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
+  @ViewChild(LabelListComponent, { static: false }) labelListComponent!: LabelListComponent;
+
   title = 'lable-creator-ui';
   function: string = '';
   projects: Project[] = [
@@ -34,4 +37,11 @@ export class AppComponent implements OnInit{
       console.log(this.projects);
     });
   }
+
+  onProjectChange() {
+    if(this.labelListComponent != undefined){
+      this.labelListComponent.findAllLabels();
+    }
+  }
+
 }

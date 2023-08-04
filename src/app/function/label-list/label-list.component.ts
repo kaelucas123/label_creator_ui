@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {Label} from "../../model/label";
 import {LabelService} from "../../service/label.service";
+import {AppComponent} from "../../app.component";
 
 @Component({
   selector: 'app-label-list',
@@ -9,7 +10,7 @@ import {LabelService} from "../../service/label.service";
   styleUrls: ['./label-list.component.scss']
 })
 export class LabelListComponent implements OnInit {
-  constructor(private labelService: LabelService) {
+  constructor(private labelService: LabelService, private appComponent: AppComponent) {
   }
 
   displayedColumns: string[] = ['id', 'created_at', 'keyLabel', 'value', 'system_locale_id', 'actions'];
@@ -23,9 +24,10 @@ export class LabelListComponent implements OnInit {
   }
 
   findAllLabels() {
-    this.labelService.getAll(this.projectId).subscribe(resp => {
+    console.log(this.appComponent.selectedProjectId);
+    this.labelService.getAll(this.appComponent.selectedProjectId).subscribe(resp => {
         this.dataSource = new MatTableDataSource<Label>(resp);
-        console.log(this.dataSource);
+        console.log(this.dataSource.data);
       },
       error => console.error(error));
   }
@@ -60,4 +62,6 @@ export class LabelListComponent implements OnInit {
   deleteRow(element: Label) {
 
   }
+
+
 }

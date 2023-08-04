@@ -1,8 +1,8 @@
 <app-sidenav></app-sidenav>
 <div class="w-100 h-100 d-flex flex-column align-items-center justify-content-center">
-    <mat-form-field class="position-absolute">
+    <mat-form-field>
       <mat-label>Select the Project</mat-label>
-      <mat-select>
+      <mat-select [(ngModel)]="selectedProjectId" (ngModelChange)="onProjectChange()">
         <mat-option *ngFor="let project of projects" [value]="project.id">
           {{ project.name }}
         </mat-option>
