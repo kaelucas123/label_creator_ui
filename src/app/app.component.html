@@ -1,11 +1,11 @@
 <div class="d-flex w-100 h-100">
   <app-sidenav></app-sidenav>
   <div class="w-100">
-      <div class="d-flex w-100 align-items-center p-4 justify-content-between">
-        <h2>Titulo da Função</h2>
+      <div class="d-flex w-100 align-items-center p-3 justify-content-between">
+        <h2>{{translateFunctionName()}}</h2>
         <select [(ngModel)]="selectedProjectId" (ngModelChange)="onProjectChange()">
           <option *ngFor="let project of projects" [value]="project.id">
-            {{ project.name }}
+            {{project.name}}
           </option>
         </select>
       </div>

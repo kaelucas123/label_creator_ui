@@ -2,7 +2,7 @@
   width: 220px;
   height: 100%;
   background: #1F1E21;
-  gap: 10%;
+  box-shadow: inset -5px 0 10px -1px rgba(1, 4, 10, 0.5);
   .image-container{
     width: 100%;
     height: 25%;
@@ -15,10 +15,32 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    gap: 30px;
     p{
       width: 100%;
       cursor: pointer;
     }
+    .menu_item{
+      background-color: transparent;
+      transition: all 200ms;
+      cursor: pointer;
+    }
+    .menu_item:hover{
+      background-color: #131115;
+      font-size: 18px;
+    }
   }
 }
+.logo{
+  transform: scale(0.3);
+  margin-bottom: 5rem;
+}
+.row_about{
+  background-color: #da3544;
+  bottom: 0;
+  cursor: pointer;
+  font-size: 18px;
+}
+.row_about:hover{
+  background-color: #da3561;
+}
+

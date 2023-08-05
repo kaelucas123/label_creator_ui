@@ -1,11 +1,22 @@
 <menu class="menu-container d-flex flex-column align-items-center">
   <div class="image-container d-flex align-items-center justify-content-center">
-    <img src="assets/logo.png">
+    <img src="assets/images/logo.png" class="logo" alt="logo">
   </div>
-  <div class="texts-container d-flex align-items-center flex-column">
-      <p (click)="selectFunction('LIST')">Listar Labels</p>
-      <p (click)="selectFunction('CREATE')">Criar Labels</p>
-      <p (click)="selectFunction('EXCHANGE')">Substituir Labels</p>
-      <p (click)="selectFunction('MYSQL')">Gerar MySQL</p>
+  <div class="col texts-container position-relative d-flex align-items-center w-100 flex-column">
+    <div class="row text-center w-100 menu_item" (click)="selectFunction('LIST')">
+      <p class="mt-2">Listar Labels</p>
+    </div>
+    <div class="row text-center w-100 menu_item" (click)="selectFunction('CREATE')">
+      <p class="mt-2">Criar Labels</p>
+    </div>
+    <div class="row text-center w-100 menu_item" (click)="selectFunction('EXCHANGE')">
+      <p class="mt-2">Substituir Labels</p>
+    </div>
+    <div class="row text-center w-100 menu_item" (click)="selectFunction('MYSQL')">
+      <p class="mt-2">Gerar MySQL</p>
+    </div>
+    <div class="row text-center position-absolute w-100 row_about" (click)="selectFunction('MYSQL')">
+      <p class="mt-2">Sobre o projeto</p>
+    </div>
   </div>
 </menu>

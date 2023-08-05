@@ -12,7 +12,8 @@ export class AppComponent implements OnInit{
   @ViewChild(LabelListComponent, { static: false }) labelListComponent!: LabelListComponent;
 
   title = 'lable-creator-ui';
-  function: string = '';
+  function: string = 'LIST';
+
   projects: Project[] = [
     {
       id: 20,
@@ -44,4 +45,17 @@ export class AppComponent implements OnInit{
     }
   }
 
+  translateFunctionName(): string{
+    if (this.function === 'LIST') {
+      return 'Listar';
+    } else if (this.function === 'CREATE') {
+      return 'Criar';
+    } else if (this.function === 'EXCHANGE') {
+      return 'Substituir';
+    } else if (this.function === 'MYSQL') {
+      return 'MySQL';
+    } else {
+      return '';
+    }
+  }
 }
