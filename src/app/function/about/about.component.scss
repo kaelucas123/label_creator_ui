@@ -1,15 +1,11 @@
 .create-container {
   max-height: 500px; /* Ajuste a altura máxima conforme necessário */
-  width: 75vw;
   height: 40rem;
+  width: 75vw;
   overflow-y: auto;
   text-align: center;
 }
-.title_head{
-  width: 100%;
-  height: 3.5rem;
-  background-color: #1f1e21;
-}
+
 
 ::-webkit-scrollbar {
   width: 10px;

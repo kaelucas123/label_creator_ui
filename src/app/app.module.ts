@@ -16,13 +16,19 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { CreateComponent } from './function/create/create.component';
 import {FormsModule} from "@angular/forms";
+import { ExchangeComponent } from './function/exchange/exchange.component';
+import { MysqlComponent } from './function/mysql/mysql.component';
+import { AboutComponent } from './function/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
     LabelListComponent,
-    CreateComponent
+    CreateComponent,
+    ExchangeComponent,
+    MysqlComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

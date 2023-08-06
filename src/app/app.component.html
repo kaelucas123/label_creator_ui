@@ -12,6 +12,8 @@
       <div class="function-container">
         <app-label-list [projectId]="selectedProjectId" *ngIf="function == 'LIST'"></app-label-list>
         <app-create *ngIf="function == 'CREATE'"></app-create>
+        <app-exchange *ngIf="function == 'EXCHANGE'"></app-exchange>
+        <app-mysql *ngIf="function == 'MYSQL'"></app-mysql>
       </div>
   </div>
 </div>
