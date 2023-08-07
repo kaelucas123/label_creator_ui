@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Html} from "../model/html";
+import {LabelCreator} from "../model/label-creator";
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,9 @@ export class LabelService {
 
   replaceHtml(projectId:number, html:Html): Observable<any> {
     return this.http.post(this.apiUrl + "/translate/" + projectId, html);
+  }
+
+  sendLabels(labelCreator:LabelCreator): Observable<any> {
+    return this.http.post(this.apiUrl, labelCreator, {observe: 'response'});
   }
 }

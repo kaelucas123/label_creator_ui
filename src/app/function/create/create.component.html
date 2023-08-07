@@ -7,10 +7,28 @@
       <h2>Saída</h2>
     </div>
     <div class="col-2 bg-light">
-      <button mat-raised-button>Criar</button>
+      <button mat-raised-button (click)="sendQuotes()">Criar</button>
     </div>
   </div>
   <div class="row h-25 bg-danger flex-fill">
-
+    <div class="col-5">
+      <div class="row">
+        <textarea cols="30" rows="10" [(ngModel)]="inputLabels"></textarea>
+      </div>
+    </div>
+    <div class="col bg-black">
+      <div class="row">
+        <div class="col-6">
+          <p>Labels Aprovadas</p>
+          <textarea readonly cols="30" rows="10" [value]="approved"></textarea>
+        </div>
+        <div class="col-6">
+          <p>Labels Rejeitadas</p>
+          <textarea readonly cols="30" rows="10" [value]="reproved"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="col-2">
+    </div>
   </div>
 </div>
