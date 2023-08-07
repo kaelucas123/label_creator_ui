@@ -20,6 +20,7 @@ import { ExchangeComponent } from './function/exchange/exchange.component';
 import { MysqlComponent } from './function/mysql/mysql.component';
 import { AboutComponent } from './function/about/about.component';
 import {ClipboardModule} from "@angular/cdk/clipboard";
+import { SnackbarComponent } from './snackbar/snackbar.component';
 
 @NgModule({
   declarations: [

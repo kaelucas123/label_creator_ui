@@ -1,28 +1,10 @@
 .create-container {
-  max-height: 500px; /* Ajuste a altura máxima conforme necessário */
+  height: 500px;
   width: 75vw;
-  height: 40rem;
-  text-align: center;
 }
 .title_head{
-  height: 3.5rem;
-  background-color: #1f1e21;
+  height: 12%
 }
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+.create_content{
+  height: 88%;
 }

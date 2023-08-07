@@ -1,34 +1,23 @@
-<div class="container-fluid mat-elevation-z8 create-container">
-  <div class="row title_head d-flex align-items-center justify-content-evenly">
-    <div class="col-5 bg-danger">
-      <h2>Entrada</h2>
-    </div>
-    <div class="col bg-black">
-      <h2>Saída</h2>
-    </div>
-    <div class="col-2 bg-light">
-      <button mat-raised-button (click)="sendQuotes()">Criar</button>
-    </div>
-  </div>
-  <div class="row h-25 bg-danger flex-fill">
-    <div class="col-5">
-      <div class="row">
-        <textarea cols="30" rows="10" [(ngModel)]="inputLabels"></textarea>
+<div class="mat-elevation-z8 create-container">
+  <div class="container-fluid bg-danger h-100">
+    <div class="row title_head bg-info ">
+      <div class="col-2 d-flex text-center align-items-center">
+        <h2 class="bg-danger">Entrada</h2>
+      </div>
+      <div class="col">
+        <h2>Saída</h2>
+      </div>
+      <div class="col-2">
+        <button mat-raised-button (click)="sendQuotes()">Criar</button>
       </div>
     </div>
-    <div class="col bg-black">
-      <div class="row">
-        <div class="col-6">
-          <p>Labels Aprovadas</p>
-          <textarea readonly cols="30" rows="10" [value]="approved"></textarea>
-        </div>
-        <div class="col-6">
-          <p>Labels Rejeitadas</p>
-          <textarea readonly cols="30" rows="10" [value]="reproved"></textarea>
-        </div>
+    <div class="row bg-primary create_content">
+      <div class="col-2 h-100 bg-black">
+
       </div>
-    </div>
-    <div class="col-2">
+      <div class="col h-100 bg-primary">
+
+      </div>
     </div>
   </div>
 </div>

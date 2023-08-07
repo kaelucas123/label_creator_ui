@@ -12,7 +12,7 @@ export class AppComponent implements OnInit{
   @ViewChild(LabelListComponent, { static: false }) labelListComponent!: LabelListComponent;
 
   title = 'lable-creator-ui';
-  function: string = 'ABOUT';
+  function: string = 'CREATE';
 
   projects: Project[] = [
     {

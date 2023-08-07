@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {LabelService} from "../../service/label.service";
 import {AppComponent} from "../../app.component";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-mysql',
@@ -26,5 +27,6 @@ export class MysqlComponent {
       this.message = error.error.message;
       this.hasLabel = false;
     });
+
   }
 }
