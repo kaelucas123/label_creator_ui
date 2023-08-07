@@ -4,7 +4,7 @@
       <button mat-raised-button class="mt-3 custom_button" (click)="generateSql()">Gerar SQL</button>
     </div>
     <div class="row d-flex align-items-center justify-content-around">
-      <button mat-raised-button class="mt-3 custom_button" (click)="generateSql()">Copiar</button>
+      <button mat-raised-button class="mt-3 custom_button" [cdkCopyToClipboard]="sqlResponse">Copiar</button>
     </div>
   </div>
   <div class="h-100 w-75 ">

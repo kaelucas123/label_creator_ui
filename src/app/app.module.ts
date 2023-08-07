@@ -20,7 +20,10 @@ import { ExchangeComponent } from './function/exchange/exchange.component';
 import { MysqlComponent } from './function/mysql/mysql.component';
 import { AboutComponent } from './function/about/about.component';
 import {ClipboardModule} from "@angular/cdk/clipboard";
-import { SnackbarComponent } from './snackbar/snackbar.component';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatCardModule} from "@angular/material/card";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import { NotificationComponent } from './utils/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
     CreateComponent,
     ExchangeComponent,
     MysqlComponent,
-    AboutComponent
+    AboutComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,10 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
     MatSelectModule,
     MatFormFieldModule,
     FormsModule,
-    ClipboardModule
+    ClipboardModule,
+    MatSnackBarModule,
+    MatCardModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

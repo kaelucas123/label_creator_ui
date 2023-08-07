@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {LabelService} from "../../service/label.service";
 import {AppComponent} from "../../app.component";
-import {MatSnackBar} from "@angular/material/snack-bar";
+import {MatSnackBar, MatSnackBarHorizontalPosition} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-mysql',
@@ -10,7 +10,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 })
 export class MysqlComponent {
 
-  constructor(private service: LabelService, private appComponent: AppComponent) {
+  constructor(private service: LabelService, private appComponent: AppComponent, private _snackBar: MatSnackBar) {
   }
 
   sqlResponse: string = '';
@@ -27,6 +27,14 @@ export class MysqlComponent {
       this.message = error.error.message;
       this.hasLabel = false;
     });
-
   }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action,{
+      duration: 3000,
+      verticalPosition: 'top',
+      horizontalPosition: "right"
+    });
+  }
+
 }
