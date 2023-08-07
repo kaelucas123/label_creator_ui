@@ -1,22 +1,32 @@
 <div class="mat-elevation-z8 create-container">
-  <div class="container-fluid bg-danger h-100">
-    <div class="row title_head bg-info ">
-      <div class="col-2 d-flex text-center align-items-center">
-        <h2 class="bg-danger">Entrada</h2>
+  <div class="container-fluid h-100">
+    <div class="row title_head">
+      <div class="col-2"></div>
+      <div class="col-5 d-flex text-center align-items-center justify-content-around">
+        <h2>Entrada</h2>
       </div>
-      <div class="col">
+      <div class="col-5 d-flex text-center align-items-center justify-content-around">
         <h2>Saída</h2>
       </div>
-      <div class="col-2">
-        <button mat-raised-button (click)="sendQuotes()">Criar</button>
-      </div>
     </div>
-    <div class="row bg-primary create_content">
-      <div class="col-2 h-100 bg-black">
+    <div class="row create_content">
+      <div class="col-2 h-100">
+        <div class="row d-flex mt-3 align-items-center justify-content-around">
+          <button mat-raised-button (click)="sendQuotes()" class="custom_button">Criar</button>
+        </div>
 
       </div>
-      <div class="col h-100 bg-primary">
+      <div class="col h-100 mt-2">
+        <textarea class="input_textarea" placeholder="Digite aqui os nomes de labels que você deseja criar..." [value]="approved"></textarea>
+      </div>
 
+      <div class="col h-100 mt-2">
+        <div class="container-fluid">
+          <textarea class="output_textarea" placeholder="Labels criadas..." [value]="approved"></textarea>
+        </div>
+        <div class="container-fluid mt-2">
+          <textarea class="output_textarea_2" placeholder="Labels que já existem..." [value]="approved"></textarea>
+        </div>
       </div>
     </div>
   </div>

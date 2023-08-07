@@ -3,8 +3,32 @@
   width: 75vw;
 }
 .title_head{
-  height: 12%
+  height: 12%;
+  background-color: #1f1e21;
+}
+.input_textarea{
+  width: 100%;
+  height: 95%;
+  resize: none;
+  font-size: 24px;
+}
+.output_textarea{
+  width: 100%;
+  height: 12.6rem;
+  resize: none;
+  color: mediumspringgreen;
+  font-size: 24px;
+}
+.output_textarea_2{
+  width: 100%;
+  height: 12.6rem;
+  resize: none;
+  color: mediumspringgreen;
+  font-size: 24px;
 }
 .create_content{
   height: 88%;
+}
+.custom_button{
+  width: 6rem;
 }
