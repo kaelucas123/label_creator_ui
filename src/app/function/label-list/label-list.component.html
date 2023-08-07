@@ -1,28 +1,46 @@
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8 custom-table">
-  <!-- Column Definitions -->
-  <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
-    <mat-header-cell *matHeaderCellDef> {{ getColumnLabel(column) }} </mat-header-cell>
-    <mat-cell *matCellDef="let element">
-      <!-- Display actions buttons in the 'actions' column -->
-      <ng-container *ngIf="column === 'actions'">
-        <button mat-icon-button [cdkCopyToClipboard]="copyRow(element)">
-          <mat-icon>content_copy</mat-icon>
-        </button>
-        <button mat-icon-button (click)="editRow(element)">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button mat-icon-button (click)="deleteRow(element)">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </ng-container>
-      <!-- Display regular cell data -->
-      <ng-container *ngIf="column !== 'actions'">
-        {{ element[column] }}
-      </ng-container>
-    </mat-cell>
-  </ng-container>
-  <!-- Header Row -->
-  <mat-header-row class="mat-header-row" *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <!-- Data Rows -->
-  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-</mat-table>
+<div class="list-container  mat-elevation-z8">
+  <div class="container-fluid">
+    <div class="col">
+<!--      table-header-->
+      <div class="row table_header">
+        <div class="col d-flex text-center align-items-center justify-content-around">
+          teste
+        </div>
+        <div class="col d-flex text-center align-items-center justify-content-around">
+          teste
+        </div>
+        <div class="col d-flex text-center align-items-center justify-content-around">
+          teste
+        </div>
+      </div>
+<!--      table content-->
+      <div class="row table_content">
+        <div class="col" >
+          <div class="row table_row mt-1" *ngFor="let label of data">
+            <div class="col-2 bg-primary d-flex text-center align-items-center justify-content-around">
+              {{label.created_at}}
+            </div>
+            <div class="col d-flex text-center">
+              {{label.keyLabel}}
+            </div>
+            <div class="col d-flex bg-primary text-center align-items-center">
+              {{label.value}}
+            </div>
+            <div class="col-2 d-flex text-center align-items-center justify-content-around">
+              <button mat-icon-button [cdkCopyToClipboard]="copyRow(label.keyLabel)">
+                <mat-icon>content_copy</mat-icon>
+              </button>
+              <button mat-icon-button>
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button>
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

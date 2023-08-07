@@ -31,7 +31,15 @@ export class LabelListComponent implements OnInit {
     { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
     { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
     { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Criar"},
-    { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Create"} ];
+    { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Create"},
+    { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "Replace"},
+    { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "REPLACE"},
+    { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Listar"},
+    { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Please, list"},
+    { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
+    { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
+    { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Criar"}
+  ];
   dataSource: MatTableDataSource<Label> = new MatTableDataSource<Label>(this.data);
 
   @Input() projectId: number = 0;
@@ -64,8 +72,8 @@ export class LabelListComponent implements OnInit {
     }
   }
 
-  copyRow(element: Label):string {
-    const translatedLabel = element.keyLabel;
+  copyRow(label: any):string {
+    const translatedLabel = label.keyLabel;
     return `{{'${translatedLabel}' | translate}}`;
   }
   editRow(element: Label) {
