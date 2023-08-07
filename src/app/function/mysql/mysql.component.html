@@ -1,3 +1,7 @@
 <div class="mat-elevation-z8 create-container">
-  ua
+  <div class="title_head">
+  </div>
+  <textarea readonly [value]="sqlResponse"></textarea>
+  <p *ngIf="!hasLabel">Aviso: {{message}}</p>
+  <button (click)="generateSql()">Gerar SQL</button>
 </div>

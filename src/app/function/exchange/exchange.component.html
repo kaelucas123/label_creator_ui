@@ -1,3 +1,8 @@
 <div class="mat-elevation-z8 create-container">
-  ua
+  <div class="title_head">
+  </div>
+  <textarea [(ngModel)]="html.html"></textarea>
+  <textarea readonly [value]="responseHtml"></textarea>
+  <p></p>
+  <button (click)="replaceHtml()">Traduzir e Substituir Palavras</button>
 </div>

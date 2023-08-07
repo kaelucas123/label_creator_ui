@@ -23,7 +23,8 @@ export class AppComponent implements OnInit{
       prodUrl: 'string'
     }
   ];
-  selectedProjectId: number = 0;
+  selectedProjectId: number = 1;
+  selectedSystemLocaleId: string = '2';
 
   constructor(private projectService: ProjectService) {
   }
