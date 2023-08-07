@@ -64,10 +64,10 @@ export class LabelListComponent implements OnInit {
     }
   }
 
-  copyRow(element: Label) {
-
+  copyRow(element: Label):string {
+    const translatedLabel = element.keyLabel;
+    return `{{'${translatedLabel}' | translate}}`;
   }
-
   editRow(element: Label) {
 
   }

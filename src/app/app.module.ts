@@ -19,6 +19,7 @@ import {FormsModule} from "@angular/forms";
 import { ExchangeComponent } from './function/exchange/exchange.component';
 import { MysqlComponent } from './function/mysql/mysql.component';
 import { AboutComponent } from './function/about/about.component';
+import {ClipboardModule} from "@angular/cdk/clipboard";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AboutComponent } from './function/about/about.component';
     MatInputModule,
     MatSelectModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    ClipboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
