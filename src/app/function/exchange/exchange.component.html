@@ -1,8 +1,28 @@
 <div class="mat-elevation-z8 create-container">
-  <div class="title_head">
+  <div class="container-fluid h-100">
+    <div class="row title_head">
+      <div class="col-2"></div>
+      <div class="col-5 d-flex text-center align-items-center justify-content-around">
+        <h2>HTML</h2>
+      </div>
+      <div class="col-5 d-flex text-center align-items-center justify-content-around">
+        <h2>HTML Formatado</h2>
+      </div>
+    </div>
+    <div class="row create_content">
+      <div class="col-2 h-100">
+        <div class="row d-flex mt-3 align-items-center justify-content-around">
+          <button mat-raised-button class="custom_button">Substituir</button>
+        </div>
+
+      </div>
+      <div class="col h-100 mt-2">
+        <textarea class="input_textarea" [(ngModel)]="html.html" placeholder="Cole o HTML aqui..."></textarea>
+      </div>
+
+      <div class="col h-100 mt-2">
+        <textarea class="input_textarea" [value]="responseHtml" readonly placeholder="HTML formatado..."></textarea>
+      </div>
+    </div>
   </div>
-  <textarea [(ngModel)]="html.html"></textarea>
-  <textarea readonly [value]="responseHtml"></textarea>
-  <p></p>
-  <button (click)="replaceHtml()">Traduzir e Substituir Palavras</button>
 </div>

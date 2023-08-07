@@ -1,34 +1,28 @@
 .create-container {
-  max-height: 500px; /* Ajuste a altura máxima conforme necessário */
+  height: 500px;
   width: 75vw;
-  height: 40rem;
-  overflow-y: auto;
-  text-align: center;
 }
-
 .title_head{
-  width: 100%;
-  height: 3.5rem;
+  height: 12%;
   background-color: #1f1e21;
 }
-
-
-
-::-webkit-scrollbar {
-  width: 10px;
+.input_textarea{
+  width: 100%;
+  height: 95%;
+  resize: none;
+  font-size: 24px;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 15px;
 }
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+.create_content{
+  height: 88%;
 }
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+.custom_button{
+  width: 6rem;
 }
