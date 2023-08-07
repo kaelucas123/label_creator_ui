@@ -28,7 +28,7 @@ export class CreateComponent {
     this.approved = "";
     this.reproved = "";
     this.service.sendLabels(this.labelCreator).subscribe((resp) => {
-        console.log(resp);
+        console.log(resp.body);
         for (const label of resp.body.body.approved) {
           this.approved += label.keyLabel + "\n";
         }

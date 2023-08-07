@@ -24,7 +24,7 @@ export class AppComponent implements OnInit{
     }
   ];
   selectedProjectId: number = 1;
-  selectedSystemLocaleId: string = '2';
+  selectedSystemLocaleId: string = '1';
 
   constructor(private projectService: ProjectService) {
   }

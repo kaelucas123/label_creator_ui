@@ -1,5 +1,5 @@
 .custom-table {
-  max-height: 500px; /* Ajuste a altura máxima conforme necessário */
+  max-height: 500px;
   width: 75vw;
   overflow-y: auto;
   text-align: center;
@@ -8,7 +8,7 @@
     position: sticky;
     top: 0;
     background: #1F1E21;
-    z-index: 1; /* Garante que o cabeçalho fique acima do conteúdo rolável */
+    z-index: 1;
   }
 }
 .table_container{
