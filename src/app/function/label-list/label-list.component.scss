@@ -10,15 +10,17 @@
   height: 440px;
   overflow-y: auto;
   .table_row_odd{
-    height: 2rem;
+    height: 3rem;
   }
   .table_row_even{
-    height: 2rem;
+    height: 3rem;
+    background-color: #373737;
   }
 }
+
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 3px;
 }
 
 /* Track */
