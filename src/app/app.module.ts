@@ -15,7 +15,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { CreateComponent } from './function/create/create.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ExchangeComponent } from './function/exchange/exchange.component';
 import { MysqlComponent } from './function/mysql/mysql.component';
 import { AboutComponent } from './function/about/about.component';
@@ -37,26 +37,27 @@ import {MatDialogModule} from "@angular/material/dialog";
     AboutComponent,
     NotificationComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgOptimizedImage,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatIconModule,
-    MatTableModule,
-    MatButtonModule,
-    HttpClientModule,
-    MatInputModule,
-    MatSelectModule,
-    MatFormFieldModule,
-    FormsModule,
-    ClipboardModule,
-    MatSnackBarModule,
-    MatCardModule,
-    MatTooltipModule,
-    MatDialogModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgOptimizedImage,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatIconModule,
+        MatTableModule,
+        MatButtonModule,
+        HttpClientModule,
+        MatInputModule,
+        MatSelectModule,
+        MatFormFieldModule,
+        FormsModule,
+        ClipboardModule,
+        MatSnackBarModule,
+        MatCardModule,
+        MatTooltipModule,
+        MatDialogModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -4,6 +4,8 @@ import {Label} from "../../model/label";
 import {LabelService} from "../../service/label.service";
 import {AppComponent} from "../../app.component";
 import { Clipboard } from "@angular/cdk/clipboard";
+import {map, Observable, startWith} from "rxjs";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-label-list',
@@ -44,19 +46,31 @@ export class LabelListComponent implements OnInit {
   dataSource: MatTableDataSource<Label> = new MatTableDataSource<Label>(this.data);
   index: number = 0;
   items: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  filteredData: Observable<Label[]> | undefined;
   @Input() projectId: number = 0;
+  myControl = new FormControl('');
 
   ngOnInit(): void {
     this.findAllLabels();
+    this.filteredData = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value || '')),
+    );
   }
 
   findAllLabels() {
     console.log(this.appComponent.selectedProjectId);
     this.labelService.getAll(this.appComponent.selectedProjectId).subscribe(resp => {
-        this.dataSource = new MatTableDataSource<Label>(resp);
+        this.filteredData = resp;
         console.log(this.dataSource.data);
       },
       error => console.error(error));
+  }
+
+  private _filter(value: string): Label[] {
+    const filterValue = value.toLowerCase();
+
+    return this.data.filter(option => option.value.toLowerCase().includes(filterValue));
   }
 
   getColumnLabel(column: string): string {
