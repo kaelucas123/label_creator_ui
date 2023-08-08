@@ -25,6 +25,9 @@ import {MatCardModule} from "@angular/material/card";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { NotificationComponent } from './utils/notification/notification.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import { EditComponent } from './popups/edit/edit.component';
+import { DeleteComponent } from './popups/delete/delete.component';
+import { PopupComponent } from './popups/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import {MatDialogModule} from "@angular/material/dialog";
     ExchangeComponent,
     MysqlComponent,
     AboutComponent,
-    NotificationComponent
+    NotificationComponent,
+    EditComponent,
+    DeleteComponent,
+    PopupComponent
   ],
     imports: [
         BrowserModule,

@@ -1,0 +1,8 @@
+.popup_container{
+  width: calc(100% - 220px);
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(31, 30, 33, 0.68);
+  backdrop-filter: blur(2px);
+}
