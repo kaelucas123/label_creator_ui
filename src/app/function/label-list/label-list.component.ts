@@ -42,7 +42,8 @@ export class LabelListComponent implements OnInit {
     { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Criar"}
   ];
   dataSource: MatTableDataSource<Label> = new MatTableDataSource<Label>(this.data);
-
+  index: number = 0;
+  items: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   @Input() projectId: number = 0;
 
   ngOnInit(): void {

@@ -4,31 +4,34 @@
 }
 .table_header{
   height: 60px;
-  background-color: #0d6dfb;
+  background-color: #1f1e21;
 }
 .table_content{
   height: 440px;
-  overflow-y: hidden;
-  .table_row{
+  overflow-y: auto;
+  .table_row_odd{
+    height: 2rem;
+  }
+  .table_row_even{
     height: 2rem;
   }
 }
-.table-content::-webkit-scrollbar {
-  width: 2px; /* Largura da barra de rolagem */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-.table-content::-webkit-scrollbar-thumb {
-  background-color: #d93535; /* Cor do "dedo" da barra de rolagem */
-  border-radius: 4px; /* Borda arredondada do "dedo" */
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-.table-content::-webkit-scrollbar-track {
-  background-color: #8c1fff; /* Cor de fundo da barra de rolagem */
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555;
 }
 
-/* Estilos adicionais para as linhas da tabela */
-.table_row {
-  height: 2rem;
-  /* background-color: #00FFA3; */
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
-

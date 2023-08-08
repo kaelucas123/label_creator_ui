@@ -6,27 +6,27 @@
         <div class="col-2 d-flex text-center align-items-center justify-content-around">
           Data
         </div>
-        <div class="col bg-dark d-flex text-center align-items-center justify-content-around">
+        <div class="col d-flex text-center align-items-center justify-content-around">
           Key
         </div>
         <div class="col d-flex text-center align-items-center justify-content-around">
-          Value
+          Valor
         </div>
-        <div class="col-2 bg-dark d-flex text-center align-items-center justify-content-around">
+        <div class="col-3 d-flex text-center align-items-center justify-content-around">
           search
         </div>
       </div>
 <!--      table content-->
       <div class="row table_content">
         <div class="col" >
-          <div class="row table_row mt-1" *ngFor="let label of data">
-            <div class="col-2 d-flex bg-dark text-center align-items-center justify-content-around">
+          <div class="row" [ngClass]="{ 'even': index % 2 === 0, 'odd': index % 2 !== 0 }" *ngFor="let label of data">
+            <div class="col-2 d-flex text-center align-items-center justify-content-around">
               {{label.created_at}}
             </div>
             <div class="col d-flex text-center align-items-center">
               {{label.keyLabel}}
             </div>
-            <div class="col d-flex bg-dark text-center align-items-center">
+            <div class="col d-flex text-center align-items-center">
               {{label.value}}
             </div>
 <!--            Tools-->
