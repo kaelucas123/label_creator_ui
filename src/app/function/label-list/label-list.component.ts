@@ -3,6 +3,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {Label} from "../../model/label";
 import {LabelService} from "../../service/label.service";
 import {AppComponent} from "../../app.component";
+import { Clipboard } from "@angular/cdk/clipboard";
 
 @Component({
   selector: 'app-label-list',
@@ -10,7 +11,7 @@ import {AppComponent} from "../../app.component";
   styleUrls: ['./label-list.component.scss']
 })
 export class LabelListComponent implements OnInit {
-  constructor(private labelService: LabelService, private appComponent: AppComponent) {
+  constructor(private labelService: LabelService, private appComponent: AppComponent, private clipboard: Clipboard) {
   }
 
   displayedColumns: string[] = ['created_at', 'keyLabel', 'value', 'actions'];
@@ -72,9 +73,9 @@ export class LabelListComponent implements OnInit {
     }
   }
 
-  copyRow(label: any):string {
-    const translatedLabel = label.keyLabel;
-    return `{{'${translatedLabel}' | translate}}`;
+  copyRow(label: Label): void {
+    const formatted_key = `{{ "${label.keyLabel}" | translate }}`;
+    this.clipboard.copy(formatted_key);
   }
   editRow(element: Label) {
 
