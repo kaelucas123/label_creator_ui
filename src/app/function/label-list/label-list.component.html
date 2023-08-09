@@ -2,16 +2,16 @@
   <div class="container-fluid">
     <div class="col">
       <div class="row table_header">
-        <div class="col-2 d-flex text-center align-items-center justify-content-around">
+        <div class="col-2 d-flex align-items-center justify-content-around">
           Data
         </div>
-        <div class="col d-flex text-center align-items-center justify-content-around">
+        <div class="col d-flex align-items-center justify-content-around">
           Key
         </div>
-        <div class="col d-flex text-center align-items-center justify-content-around">
+        <div class="col d-flex align-items-center justify-content-around">
           Valor
         </div>
-        <div class="col-2 bg-dark d-flex text-center align-items-center justify-content-around">
+        <div class="col-2 d-flex text-center align-items-center justify-content-around">
           <input class="filter-input" placeholder="Digite o Valor da Label" [formControl]="myControl" matInput>
         </div>
       </div>
@@ -31,7 +31,7 @@
               <button mat-icon-button class="d-flex justify-content-around align-items-center" (click)="copyRow(label)">
                 <mat-icon>content_copy</mat-icon>
               </button>
-              <button mat-icon-button class="d-flex justify-content-around align-items-center" (click)="openPopup()">
+              <button mat-icon-button class="d-flex justify-content-around align-items-center" (click)="editRow()">
                 <mat-icon>edit</mat-icon>
               </button>
               <button mat-icon-button class="d-flex justify-content-around align-items-center">

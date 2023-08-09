@@ -6,8 +6,7 @@ import {AppComponent} from "../../app.component";
 import { Clipboard } from "@angular/cdk/clipboard";
 import {map, Observable, of, startWith} from "rxjs";
 import {FormControl} from "@angular/forms";
-import {EditComponent} from "../../popups/edit/edit.component";
-import {MatDialog} from "@angular/material/dialog";
+
 
 @Component({
   selector: 'app-label-list',
@@ -15,7 +14,7 @@ import {MatDialog} from "@angular/material/dialog";
   styleUrls: ['./label-list.component.scss']
 })
 export class LabelListComponent implements OnInit {
-  constructor(private labelService: LabelService, private appComponent: AppComponent, private dialog: MatDialog, private clipboard: Clipboard) {
+  constructor(private labelService: LabelService, private appComponent: AppComponent, private clipboard: Clipboard) {
   }
 
   displayedColumns: string[] = ['created_at', 'keyLabel', 'value', 'actions'];
@@ -52,17 +51,6 @@ export class LabelListComponent implements OnInit {
   @Input() projectId: number = 0;
   myControl = new FormControl('');
   hasResult: boolean = false;
-
-  openPopup(): void {
-    const dialogRef = this.dialog.open(EditComponent, {
-      width: '400px',
-      height: '2000px,'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('O popup foi fechado.', result);
-    });
-  }
 
   ngOnInit(): void {
     this.findAllLabels();
@@ -107,8 +95,8 @@ export class LabelListComponent implements OnInit {
     const formatted_key = `{{ "${label.keyLabel}" | translate }}`;
     this.clipboard.copy(formatted_key);
   }
-  editRow(element: Label) {
-
+  editRow() {
+    this.appComponent.openPopup();
   }
 
   deleteRow(element: Label) {

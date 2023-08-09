@@ -1,7 +1,20 @@
 <div class="component_container">
   <div class="container-fluid">
-    <div class="row bg-dark">
-      teste
+    <div class="row title_head">
+      <div class="col d-flex align-items-center justify-content-start">
+        <h4>
+          Editar
+        </h4>
+      </div>
+      <button mat-icon-button class="close_button d-flex align-items-center justify-content-around"
+              (click)="this.appComponent.openPopup()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div class="row">
+      <div class="col popup_content d-flex align-items-center justify-content-around">
+        teste
+      </div>
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AppComponent} from "../../app.component";
 
 @Component({
   selector: 'app-delete',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./delete.component.scss']
 })
 export class DeleteComponent {
+  constructor(public appComponent: AppComponent){}
 
+  private open(): void{
+    this.appComponent.openPopup();
+  }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {MatDialogRef} from "@angular/material/dialog";
+import {AppComponent} from "../../app.component";
 
 @Component({
   selector: 'app-edit',
@@ -7,6 +8,9 @@ import {MatDialogRef} from "@angular/material/dialog";
   styleUrls: ['./edit.component.scss']
 })
 export class EditComponent {
-  constructor(public dialogRef: MatDialogRef<EditComponent>) { }
+  constructor(public appComponent: AppComponent){}
 
+  private open(): void{
+    this.appComponent.openPopup();
+  }
 }

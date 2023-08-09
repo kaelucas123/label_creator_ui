@@ -2,6 +2,8 @@ import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core'
 import {Project} from "./model/project";
 import {ProjectService} from "./service/project.service";
 import {LabelListComponent} from "./function/label-list/label-list.component";
+import {MatDialog} from "@angular/material/dialog";
+import {PopupComponent} from "./popups/popup/popup.component";
 
 @Component({
   selector: 'app-root',
@@ -13,6 +15,7 @@ export class AppComponent implements OnInit{
 
   title = 'lable-creator-ui';
   function: string = 'LIST';
+  onPopup: boolean = true;
 
   projects: Project[] = [
     {
@@ -26,7 +29,7 @@ export class AppComponent implements OnInit{
   selectedProjectId: number = 1;
   selectedSystemLocaleId: string = '1';
 
-  constructor(private projectService: ProjectService) {
+  constructor(private projectService: ProjectService, private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -44,6 +47,10 @@ export class AppComponent implements OnInit{
     if(this.labelListComponent != undefined){
       this.labelListComponent.findAllLabels();
     }
+  }
+
+  openPopup(): void {
+    this.onPopup = !this.onPopup;
   }
 
   translateFunctionName(): string{

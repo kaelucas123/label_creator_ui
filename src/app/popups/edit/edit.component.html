@@ -1,9 +1,15 @@
-<div class="dialog_container">
-  <mat-dialog-content>
-    <!-- Conteúdo do popup aqui -->
-    <p>Este é o conteúdo do popup.</p>
-  </mat-dialog-content>
-  <mat-dialog-actions align="end">
-    <button mat-button [mat-dialog-close]="true">Fechar</button>
-  </mat-dialog-actions>
+<div class="component_container">
+  <div class="container-fluid">
+    <div class="row title_head">
+      <div class="col d-flex align-items-center justify-content-start">
+        <h4>
+          Deletar
+        </h4>
+      </div>
+      <button mat-icon-button class="close_button d-flex align-items-center justify-content-around"
+              (click)="this.appComponent.openPopup()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
 </div>
