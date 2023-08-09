@@ -9,7 +9,4 @@ import {AppComponent} from "../../app.component";
 export class DeleteComponent {
   constructor(public appComponent: AppComponent){}
 
-  private open(): void{
-    this.appComponent.openPopup();
-  }
 }

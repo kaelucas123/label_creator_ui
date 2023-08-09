@@ -10,7 +10,4 @@ import {AppComponent} from "../../app.component";
 export class EditComponent {
   constructor(public appComponent: AppComponent){}
 
-  private open(): void{
-    this.appComponent.openPopup();
-  }
 }

@@ -18,32 +18,32 @@ export class LabelListComponent implements OnInit {
   }
 
   displayedColumns: string[] = ['created_at', 'keyLabel', 'value', 'actions'];
-  data: Label[] = [];
-  // data: Label[] = [
-  //   { "created_at": "27/07/2023", "keyLabel": "label_status", "value": "Status"},
-  //   { "created_at": "27/07/2023", "keyLabel": "label_status", "value": "Status"},
-  //   { "created_at": "27/07/2023", "keyLabel": "label_add_approver", "value": "Adicionar Aprovador"},
-  //   { "created_at": "27/07/2023", "keyLabel": "label_add_approver", "value": "Add Approver"},
-  //   { "created_at": "27/07/2023", "keyLabel": "label_action", "value": "Ação"},
-  //   { "created_at": "27/07/2023", "keyLabel": "label_action", "value": "Action"},
-  //   { "created_at": "27/07/2023", "keyLabel": "label_approver_calculation_parameters", "value": "Aprovador Parâmetros de Cálculo"},
-  //   { "created_at": "27/07/2023", "keyLabel": "label_approver_calculation_parameters", "value": "Approver Calculation Parameters"},
-  //   { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "Replace"},
-  //   { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "REPLACE"},
-  //   { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Listar"},
-  //   { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Please, list"},
-  //   { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
-  //   { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
-  //   { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Criar"},
-  //   { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Create"},
-  //   { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "Replace"},
-  //   { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "REPLACE"},
-  //   { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Listar"},
-  //   { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Please, list"},
-  //   { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
-  //   { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
-  //   { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Criar"}
-  // ];
+  // data: Label[] = [];
+  data: Label[] = [
+    { "created_at": "27/07/2023", "keyLabel": "label_status", "value": "Status"},
+    { "created_at": "27/07/2023", "keyLabel": "label_status", "value": "Status"},
+    { "created_at": "27/07/2023", "keyLabel": "label_add_approver", "value": "Adicionar Aprovador"},
+    { "created_at": "27/07/2023", "keyLabel": "label_add_approver", "value": "Add Approver"},
+    { "created_at": "27/07/2023", "keyLabel": "label_action", "value": "Ação"},
+    { "created_at": "27/07/2023", "keyLabel": "label_action", "value": "Action"},
+    { "created_at": "27/07/2023", "keyLabel": "label_approver_calculation_parameters", "value": "Aprovador Parâmetros de Cálculo"},
+    { "created_at": "27/07/2023", "keyLabel": "label_approver_calculation_parameters", "value": "Approver Calculation Parameters"},
+    { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "Replace"},
+    { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "REPLACE"},
+    { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Listar"},
+    { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Please, list"},
+    { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
+    { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
+    { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Criar"},
+    { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Create"},
+    { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "Replace"},
+    { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "REPLACE"},
+    { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Listar"},
+    { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Please, list"},
+    { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
+    { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
+    { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Criar"}
+  ];
   dataSource: MatTableDataSource<Label> = new MatTableDataSource<Label>(this.data);
   index: number = 0;
   items: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -99,8 +99,8 @@ export class LabelListComponent implements OnInit {
     this.appComponent.openPopup();
   }
 
-  deleteRow(element: Label) {
-
+  deleteRow() {
+    this.appComponent.openPopup();
   }
 
 

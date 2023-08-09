@@ -15,7 +15,7 @@ export class AppComponent implements OnInit{
 
   title = 'lable-creator-ui';
   function: string = 'LIST';
-  onPopup: boolean = true;
+  onPopup: boolean = false;
 
   projects: Project[] = [
     {
@@ -50,7 +50,10 @@ export class AppComponent implements OnInit{
   }
 
   openPopup(): void {
-    this.onPopup = !this.onPopup;
+    this.onPopup = true;
+  }
+  closePopup(): void {
+    this.onPopup = false;
   }
 
   translateFunctionName(): string{
