@@ -14,11 +14,12 @@
         <div class="row d-flex mt-3 align-items-center justify-content-around">
           <button mat-raised-button class="custom_button" (click)="replaceHtml()">Substituir</button>
           <button mat-raised-button class="custom_button mt-2" [cdkCopyToClipboard]="responseHtml" [disabled]="responseHtml.length == 0" color="primary">Copiar</button>
+          <mat-spinner *ngIf="loading"></mat-spinner>
         </div>
 
       </div>
       <div class="col h-100 mt-2">
-        <textarea class="input_textarea" [(ngModel)]="html.html" placeholder="Cole o HTML aqui..."></textarea>
+        <textarea class="input_textarea" [(ngModel)]="html.html" spellcheck="false" placeholder="Cole o HTML aqui..."></textarea>
       </div>
 
       <div class="col h-100 mt-2">

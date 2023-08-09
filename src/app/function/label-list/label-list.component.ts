@@ -4,7 +4,7 @@ import {Label} from "../../model/label";
 import {LabelService} from "../../service/label.service";
 import {AppComponent} from "../../app.component";
 import { Clipboard } from "@angular/cdk/clipboard";
-import {map, Observable, startWith} from "rxjs";
+import {map, Observable, of, startWith} from "rxjs";
 import {FormControl} from "@angular/forms";
 import {EditComponent} from "../../popups/edit/edit.component";
 import {MatDialog} from "@angular/material/dialog";
@@ -19,38 +19,39 @@ export class LabelListComponent implements OnInit {
   }
 
   displayedColumns: string[] = ['created_at', 'keyLabel', 'value', 'actions'];
-  // data: Label[] = [];
-  data: Label[] = [
-    { "created_at": "27/07/2023", "keyLabel": "label_status", "value": "Status"},
-    { "created_at": "27/07/2023", "keyLabel": "label_status", "value": "Status"},
-    { "created_at": "27/07/2023", "keyLabel": "label_add_approver", "value": "Adicionar Aprovador"},
-    { "created_at": "27/07/2023", "keyLabel": "label_add_approver", "value": "Add Approver"},
-    { "created_at": "27/07/2023", "keyLabel": "label_action", "value": "Ação"},
-    { "created_at": "27/07/2023", "keyLabel": "label_action", "value": "Action"},
-    { "created_at": "27/07/2023", "keyLabel": "label_approver_calculation_parameters", "value": "Aprovador Parâmetros de Cálculo"},
-    { "created_at": "27/07/2023", "keyLabel": "label_approver_calculation_parameters", "value": "Approver Calculation Parameters"},
-    { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "Replace"},
-    { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "REPLACE"},
-    { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Listar"},
-    { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Please, list"},
-    { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
-    { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
-    { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Criar"},
-    { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Create"},
-    { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "Replace"},
-    { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "REPLACE"},
-    { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Listar"},
-    { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Please, list"},
-    { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
-    { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
-    { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Criar"}
-  ];
+  data: Label[] = [];
+  // data: Label[] = [
+  //   { "created_at": "27/07/2023", "keyLabel": "label_status", "value": "Status"},
+  //   { "created_at": "27/07/2023", "keyLabel": "label_status", "value": "Status"},
+  //   { "created_at": "27/07/2023", "keyLabel": "label_add_approver", "value": "Adicionar Aprovador"},
+  //   { "created_at": "27/07/2023", "keyLabel": "label_add_approver", "value": "Add Approver"},
+  //   { "created_at": "27/07/2023", "keyLabel": "label_action", "value": "Ação"},
+  //   { "created_at": "27/07/2023", "keyLabel": "label_action", "value": "Action"},
+  //   { "created_at": "27/07/2023", "keyLabel": "label_approver_calculation_parameters", "value": "Aprovador Parâmetros de Cálculo"},
+  //   { "created_at": "27/07/2023", "keyLabel": "label_approver_calculation_parameters", "value": "Approver Calculation Parameters"},
+  //   { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "Replace"},
+  //   { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "REPLACE"},
+  //   { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Listar"},
+  //   { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Please, list"},
+  //   { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
+  //   { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
+  //   { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Criar"},
+  //   { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Create"},
+  //   { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "Replace"},
+  //   { "created_at": "28/07/2023", "keyLabel": "label_replace", "value": "REPLACE"},
+  //   { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Listar"},
+  //   { "created_at": "28/07/2023", "keyLabel": "label_please,_list", "value": "Please, list"},
+  //   { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
+  //   { "created_at": "28/07/2023", "keyLabel": "label_mysql", "value": "MySQL"},
+  //   { "created_at": "28/07/2023", "keyLabel": "label_create", "value": "Criar"}
+  // ];
   dataSource: MatTableDataSource<Label> = new MatTableDataSource<Label>(this.data);
   index: number = 0;
   items: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  filteredData: Observable<Label[]> | undefined;
+  filteredData: Observable<Label[]> = new Observable<Label[]>();
   @Input() projectId: number = 0;
   myControl = new FormControl('');
+  hasResult: boolean = false;
 
   openPopup(): void {
     const dialogRef = this.dialog.open(EditComponent, {
@@ -65,6 +66,7 @@ export class LabelListComponent implements OnInit {
 
   ngOnInit(): void {
     this.findAllLabels();
+
     this.filteredData = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value || '')),
@@ -74,7 +76,7 @@ export class LabelListComponent implements OnInit {
   findAllLabels() {
     console.log(this.appComponent.selectedProjectId);
     this.labelService.getAll(this.appComponent.selectedProjectId).subscribe(resp => {
-        this.filteredData = resp;
+        this.data = resp;
         console.log(this.dataSource.data);
       },
       error => console.error(error));

@@ -1,7 +1,6 @@
 <div class="list-container  mat-elevation-z8">
   <div class="container-fluid">
     <div class="col">
-<!--      table-header-->
       <div class="row table_header">
         <div class="col-2 d-flex text-center align-items-center justify-content-around">
           Data
@@ -13,14 +12,12 @@
           Valor
         </div>
         <div class="col-2 bg-dark d-flex text-center align-items-center justify-content-around">
-          <input placeholder="Digite o Valor da Label" [formControl]="myControl" matInput>
-<!--          <mat-icon>search</mat-icon>-->
+          <input class="filter-input" placeholder="Digite o Valor da Label" [formControl]="myControl" matInput>
         </div>
       </div>
-<!--      table content-->
       <div class="row table_content">
         <div class="col" >
-          <div class="row" [ngClass]="{ 'table_row_even': index % 2 === 0, 'table_row_odd': index % 2 !== 0 }" *ngFor="let label of filteredData | async; let index = index">
+          <div class="row" [ngClass]="{ 'table_row_even': index % 2 === 0, 'table_row_odd': index % 2 !== 0 }" *ngFor="let label of (myControl.value ? (filteredData | async) : data); let index = index">
             <div class="col-2 d-flex align-items-center justify-content-around justify-content-around">
               {{label.created_at}}
             </div>
@@ -30,7 +27,6 @@
             <div class="col d-flex justify-content-around align-items-center">
               {{label.value}}
             </div>
-<!--            Tools-->
             <div class="col-2 d-flex text-center align-items-center justify-content-around">
               <button mat-icon-button class="d-flex justify-content-around align-items-center" (click)="copyRow(label)">
                 <mat-icon>content_copy</mat-icon>
@@ -44,7 +40,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>

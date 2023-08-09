@@ -28,6 +28,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import { EditComponent } from './popups/edit/edit.component';
 import { DeleteComponent } from './popups/delete/delete.component';
 import { PopupComponent } from './popups/popup/popup.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -43,27 +44,28 @@ import { PopupComponent } from './popups/popup/popup.component';
     DeleteComponent,
     PopupComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        NgOptimizedImage,
-        BrowserAnimationsModule,
-        MatIconModule,
-        MatIconModule,
-        MatTableModule,
-        MatButtonModule,
-        HttpClientModule,
-        MatInputModule,
-        MatSelectModule,
-        MatFormFieldModule,
-        FormsModule,
-        ClipboardModule,
-        MatSnackBarModule,
-        MatCardModule,
-        MatTooltipModule,
-        MatDialogModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgOptimizedImage,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatIconModule,
+    MatTableModule,
+    MatButtonModule,
+    HttpClientModule,
+    MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    FormsModule,
+    ClipboardModule,
+    MatSnackBarModule,
+    MatCardModule,
+    MatTooltipModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
