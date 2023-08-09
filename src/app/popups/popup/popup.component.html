@@ -1,4 +1,4 @@
 <div class="popup_container d-flex align-items-center justify-content-around">
-  <app-delete></app-delete>
-  <app-edit></app-edit>
+  <app-delete *ngIf="selectedPopup == 'DELETE'"></app-delete>
+  <app-edit *ngIf="selectedPopup == 'EDIT'"></app-edit>
 </div>

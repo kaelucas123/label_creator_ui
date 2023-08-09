@@ -26,10 +26,11 @@ export class AppComponent implements OnInit{
       prodUrl: 'string'
     }
   ];
+
   selectedProjectId: number = 1;
   selectedSystemLocaleId: string = '1';
 
-  constructor(private projectService: ProjectService, private dialog: MatDialog) {
+  constructor(private projectService: ProjectService) {
   }
 
   ngOnInit(): void {

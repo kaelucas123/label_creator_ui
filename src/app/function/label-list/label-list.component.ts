@@ -6,6 +6,7 @@ import {AppComponent} from "../../app.component";
 import { Clipboard } from "@angular/cdk/clipboard";
 import {map, Observable, of, startWith} from "rxjs";
 import {FormControl} from "@angular/forms";
+import {PopupComponent} from "../../popups/popup/popup.component";
 
 
 @Component({
@@ -14,7 +15,10 @@ import {FormControl} from "@angular/forms";
   styleUrls: ['./label-list.component.scss']
 })
 export class LabelListComponent implements OnInit {
-  constructor(private labelService: LabelService, private appComponent: AppComponent, private clipboard: Clipboard) {
+  constructor(private labelService: LabelService,
+              private appComponent: AppComponent,
+              private clipboard: Clipboard,
+    ) {
   }
 
   displayedColumns: string[] = ['created_at', 'keyLabel', 'value', 'actions'];
@@ -46,7 +50,6 @@ export class LabelListComponent implements OnInit {
   ];
   dataSource: MatTableDataSource<Label> = new MatTableDataSource<Label>(this.data);
   index: number = 0;
-  items: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   filteredData: Observable<Label[]> = new Observable<Label[]>();
   @Input() projectId: number = 0;
   myControl = new FormControl('');
