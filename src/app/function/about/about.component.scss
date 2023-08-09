@@ -1,20 +1,35 @@
-.create-container {
-  max-height: 500px; /* Ajuste a altura máxima conforme necessário */
-  height: 40rem;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap');
+.list-container {
+  height: 500px;
   width: 75vw;
-  overflow-y: auto;
-  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
 }
 
-.title_head{
-  width: 100%;
-  height: 3.5rem;
+.table_header{
+  height: 60px;
   background-color: #1f1e21;
 }
 
+.table_content{
+  height: 440px;
+  overflow-y: auto;
+}
 
+
+strong{
+  color: #00FFA3;
+
+}
+
+
+
+
+
+
+/* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 3px;
 }
 
 /* Track */
@@ -24,7 +39,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #555;
 }
 
 /* Handle on hover */
