@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Html} from "../model/html";
 import {LabelCreator} from "../model/label-creator";
+import {Label} from "../model/label";
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,9 @@ export class LabelService {
 
   sendLabels(labelCreator:LabelCreator): Observable<any> {
     return this.http.post(this.apiUrl, labelCreator, {observe: 'response'});
+  }
+
+  editLabel(label:Label): Observable<any> {
+    return this.http.put(this.apiUrl, label);
   }
 }

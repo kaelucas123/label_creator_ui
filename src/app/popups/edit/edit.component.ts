@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {MatDialogRef} from "@angular/material/dialog";
 import {AppComponent} from "../../app.component";
+import {Label} from "../../model/label";
+import {LabelService} from "../../service/label.service";
 
 @Component({
   selector: 'app-edit',
@@ -8,6 +10,14 @@ import {AppComponent} from "../../app.component";
   styleUrls: ['./edit.component.scss']
 })
 export class EditComponent {
-  constructor(public appComponent: AppComponent){}
+  constructor(public appComponent: AppComponent, private service: LabelService){}
 
+  label: Label = this.appComponent.selectedLabel;
+
+  editLabel() {
+    this.service.editLabel(this.label).subscribe(resp => {
+      this.appComponent.labelListComponent.findAllLabels();
+    });
+    this.appComponent.closePopup();
+  }
 }

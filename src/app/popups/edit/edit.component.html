@@ -15,14 +15,14 @@
       <div class="d-flex flex-column align-items-end">
         <div class="form-input">
           <label>Key</label>
-          <input type="text">
+          <input type="text" [(ngModel)]="label.keyLabel">
         </div>
         <div class="form-input">
           <label>Value</label>
-          <input type="text">
+          <input type="text" [(ngModel)]="label.value">
         </div>
       </div>
-      <button mat-raised-button color="primary">
+      <button mat-raised-button color="primary" (click)="editLabel()">
         Editar
       </button>
     </div>

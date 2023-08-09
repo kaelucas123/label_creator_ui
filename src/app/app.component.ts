@@ -4,6 +4,7 @@ import {ProjectService} from "./service/project.service";
 import {LabelListComponent} from "./function/label-list/label-list.component";
 import {MatDialog} from "@angular/material/dialog";
 import {PopupComponent} from "./popups/popup/popup.component";
+import {Label} from "./model/label";
 
 @Component({
   selector: 'app-root',
@@ -30,6 +31,12 @@ export class AppComponent implements OnInit{
   selectedProjectId: number = 1;
   selectedSystemLocaleId: string = '1';
   selectedPopup: string = '';
+  selectedLabel: Label = {
+    id: 0,
+    created_at: '',
+    keyLabel: '',
+    value: ''
+  };
 
   constructor(private projectService: ProjectService) {
   }
