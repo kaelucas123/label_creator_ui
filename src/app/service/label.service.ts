@@ -34,4 +34,8 @@ export class LabelService {
   editLabel(label:Label): Observable<any> {
     return this.http.put(this.apiUrl, label);
   }
+
+  deleteLabel(labelId:number): Observable<any> {
+    return this.http.delete(this.apiUrl + '/' + labelId);
+  }
 }

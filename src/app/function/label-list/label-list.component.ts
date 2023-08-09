@@ -105,9 +105,10 @@ export class LabelListComponent implements OnInit {
     this.appComponent.selectedLabel = label;
   }
 
-  deleteRow() {
+  deleteRow(label: Label) {
     this.appComponent.selectedPopup = 'DELETE'
-    this.appComponent.openPopup();
+    this.appComponent.openPopup()
+    this.appComponent.selectedLabel = label;
   }
 
 

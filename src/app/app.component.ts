@@ -63,6 +63,7 @@ export class AppComponent implements OnInit{
   }
   closePopup(): void {
     this.onPopup = false;
+    this.labelListComponent.findAllLabels()
   }
 
   translateFunctionName(): string{
