@@ -9,7 +9,7 @@ import {AppComponent} from "../../app.component";
   styleUrls: ['./popup.component.scss']
 })
 export class PopupComponent {
-  selectedPopup: string = '';
+  selectedPopup: string = this.appComponent.selectedPopup;
   constructor(public appComponent: AppComponent){}
 
 }

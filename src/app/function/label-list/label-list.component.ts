@@ -99,10 +99,12 @@ export class LabelListComponent implements OnInit {
     this.clipboard.copy(formatted_key);
   }
   editRow() {
+    this.appComponent.selectedPopup = 'EDIT'
     this.appComponent.openPopup();
   }
 
   deleteRow() {
+    this.appComponent.selectedPopup = 'DELETE'
     this.appComponent.openPopup();
   }
 

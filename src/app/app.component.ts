@@ -29,6 +29,7 @@ export class AppComponent implements OnInit{
 
   selectedProjectId: number = 1;
   selectedSystemLocaleId: string = '1';
+  selectedPopup: string = '';
 
   constructor(private projectService: ProjectService) {
   }

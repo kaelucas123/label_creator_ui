@@ -1,14 +1,29 @@
 <div class="component_container">
-  <div class="container-fluid">
+  <div class="container-fluid h-100">
     <div class="row title_head">
       <div class="col d-flex align-items-center justify-content-start">
         <h4>
-          Deletar
+          Editar Label
         </h4>
       </div>
       <button mat-icon-button class="close_button d-flex align-items-center justify-content-around"
               (click)="this.appComponent.closePopup()">
         <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div class="form-content">
+      <div class="d-flex flex-column align-items-end">
+        <div class="form-input">
+          <label>Key</label>
+          <input type="text">
+        </div>
+        <div class="form-input">
+          <label>Value</label>
+          <input type="text">
+        </div>
+      </div>
+      <button mat-raised-button color="primary">
+        Editar
       </button>
     </div>
   </div>

@@ -2,8 +2,7 @@ import {Component} from '@angular/core';
 import {Html} from "../../model/html";
 import {LabelService} from "../../service/label.service";
 import {AppComponent} from "../../app.component";
-import format from "html-format";
-
+import * as cheerio from 'cheerio';
 @Component({
   selector: 'app-exchange',
   templateUrl: './exchange.component.html',
@@ -26,7 +25,6 @@ export class ExchangeComponent {
     this.service.replaceHtml(this.appComponent.selectedProjectId, this.html).subscribe(data => {
       this.responseHtml = data.html;
       this.loading = false;
-      this.responseHtml = this.responseHtml.replace(/^\s*[\r\n]/gm, '');
     }, error => {
       console.log(error);
     });
